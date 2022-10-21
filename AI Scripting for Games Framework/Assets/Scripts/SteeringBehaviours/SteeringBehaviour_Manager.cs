@@ -19,8 +19,15 @@ public class SteeringBehaviour_Manager : MonoBehaviour
 
 	public Vector2 GenerateSteeringForce()
     {
-        //delete me
-        return Vector2.zero;
+        if (m_SteeringBehaviours.Count > 0)
+        {
+            return m_SteeringBehaviours[0].CalculateForce();
+        }
+        else
+        {
+            Debug.LogError("List of behaviours is empty", this);
+            return Vector2.zero;
+        }
     }
 
     public void EnableExclusive(SteeringBehaviour behaviour)
@@ -36,7 +43,7 @@ public class SteeringBehaviour_Manager : MonoBehaviour
 		}
         else
 		{
-            Debug.Log(behaviour + " doesn't not exist on object", this);
+            Debug.Log(behaviour + " does not exist on object", this);
 		}
 	}
     public void DisableAllSteeringBehaviours()

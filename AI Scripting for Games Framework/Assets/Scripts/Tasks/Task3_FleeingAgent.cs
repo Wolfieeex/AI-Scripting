@@ -29,6 +29,7 @@ public class Task3_FleeingAgent : MovingEntity
 
 	protected override Vector2 GenerateVelocity()
 	{
+		float m_FleeRadius = Maths.Magnitude(new Vector2(m_Flee.m_FleeTarget.position.x, m_Flee.m_FleeTarget.position.y) - new Vector2(this.transform.position.x, this.transform.position.y));
 		return m_SteeringBehaviours.GenerateSteeringForce();
 	}
 }

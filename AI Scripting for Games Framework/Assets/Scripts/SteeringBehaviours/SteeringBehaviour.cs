@@ -15,7 +15,7 @@ public abstract class SteeringBehaviour : MonoBehaviour
 
     [Header("Settings")]
     public bool m_Active = true;
-    public float m_Weight = 5;
+    public float m_Weight = 1;
 
     protected SteeringBehaviour_Manager m_Manager;
     protected Vector2 m_DesiredVelocity;
